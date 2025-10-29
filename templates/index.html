@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Academic Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Academic Assistant</h1>
+            <p>Powered by Gemini AI - Generate, Summarize, Categorize, and Explain Academic Content</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <h3>Generate Content</h3>
+                <p>Create well-structured academic content on any topic with scholarly precision</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Summarize Texts</h3>
+                <p>Extract key points and main arguments from lengthy academic papers</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🏷️</div>
+                <h3>Categorize Content</h3>
+                <p>Identify fields, themes, and subjects in academic materials</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💡</div>
+                <h3>Explain Concepts</h3>
+                <p>Get detailed explanations with examples and applications</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2 class="section-title">Input</h2>
+                
+                <div class="task-buttons">
+                    <button class="task-btn active" data-task="generate">Generate</button>
+                    <button class="task-btn" data-task="summarize">Summarize</button>
+                    <button class="task-btn" data-task="categorize">Categorize</button>
+                    <button class="task-btn" data-task="explain">Explain</button>
+                </div>
+
+                <textarea 
+                    id="contentInput" 
+                    placeholder="Enter a topic to generate academic content (e.g., 'Machine Learning algorithms', 'Renaissance Art History')..."
+                ></textarea>
+
+                <button id="processBtn" class="process-btn">
+                    Process Content
+                </button>
+                <small style="display: block; text-align: center; margin-top: 10px; color: #6c757d;">
+                    Tip: Press Ctrl+Enter to quickly process
+                </small>
+            </div>
+
+            <div class="output-section">
+                <h2 class="section-title">Output</h2>
+                
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Processing your request with Gemini AI...</p>
+                </div>
+
+                <div id="outputContent" class="output-content">
+                    Your processed content will appear here...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
